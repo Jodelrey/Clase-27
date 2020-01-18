@@ -1,0 +1,23 @@
+@keyframes subtMove{
+    0%{
+        transform: translateY(120);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(-120px);
+        
+        
+    }
+}
+
+@keyframes subtMoveResponsive{
+    0%{
+        transform: translateY(160);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(-100px);
+        
+        
+    }
+}
