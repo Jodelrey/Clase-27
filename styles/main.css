@@ -44,7 +44,7 @@
       flex-grow: 4;
       cursor: pointer;
       filter: none; }
-    .container .img:hover::before {
+    .container .img::before {
       content: "Lorem ipsum";
       font-family: "Nunito", sans-serif;
       font-size: 40px;
@@ -54,9 +54,22 @@
       left: calc(50% - 116px);
       line-height: 60px;
       opacity: 0;
-      border-top: 2px solid #207561;
-      border-bottom: 2px solid #207561;
+      transition: 0.5s; }
+    .container .img:hover::before {
       animation: subtMove 2s linear forwards; }
+    .container .img::after {
+      content: "";
+      width: 280px;
+      position: absolute;
+      bottom: 30px;
+      left: calc(50% - 140px);
+      height: 60px;
+      transform: scaleX(0);
+      transition: 0.5s 1.8s; }
+    .container .img:hover::after {
+      transform: scaleX(1);
+      border-top: 2px solid #207561;
+      border-bottom: 2px solid #207561; }
 
 @media (max-width: 900px) {
   .container {
@@ -66,6 +79,8 @@
       width: 100%;
       background-position: center; }
       .container .img:hover::before {
-        animation: subtMoveResponsive 2s linear forwards; } }
+        animation: subtMoveResponsive 2s linear forwards; }
+      .container .img:hover::after {
+        bottom: 9px; } }
 
 /*# sourceMappingURL=main.css.map */

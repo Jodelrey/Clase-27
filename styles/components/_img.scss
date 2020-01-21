@@ -42,7 +42,7 @@
                   
 
        }
-        &:hover::before{
+        &::before{
             content: "Lorem ipsum";
             font-family: $fontFamily;
             font-size: $fontSize;
@@ -51,14 +51,30 @@
             bottom: -90px;            
             left: calc(50% - 116px);
             line-height: 60px;
-            opacity: 0;                     
-            border-top: 2px solid $fontColor;
-            border-bottom: 2px solid $fontColor;
-            animation: subtMove 2s linear forwards;            
+            opacity: 0;
+            transition: 0.5s; 
+        } 
+        &:hover::before{
+            animation: subtMove 2s linear forwards;
+        } 
+        &::after{
+            content: "";
+            width: 280px;
+            position: absolute;
+            bottom: 30px;            
+            left: calc(50% - 140px);
+            height: 60px;
+            transform: scaleX(0);                      
+            transition: 0.5s 1.8s;
+                        
             
         }
-        
-        
+        &:hover::after{
+            transform: scaleX(1);            
+            border-top: 2px solid $fontColor;
+            border-bottom: 2px solid $fontColor;
+        }
+               
         }
     
 }
@@ -73,8 +89,11 @@
             &:hover::before{
                 animation: subtMoveResponsive 2s linear forwards;
             }
+            &:hover::after{
+                bottom: 9px;
         }
     }
 }
 
+}
 
